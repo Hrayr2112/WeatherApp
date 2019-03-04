@@ -75,4 +75,7 @@ struct UIConstants {
 
     // Table View
     static let rowHeight: CGFloat = 50
+
+    // Vertical Constraint
+    static let verticalConstraintAdditionalValue: CGFloat = 21
 }

@@ -37,7 +37,7 @@ class ChooseCityViewController: UIViewController {
         tableView.register(UINib(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: "cityCell")
     }
 
-    func pushNextViewController() {
+    func pushLoginViewController() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         navigationController?.pushViewController(loginViewController, animated: true)
@@ -65,7 +65,7 @@ extension ChooseCityViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         APIConstants.cityCoordinates = citiesCoordinates[indexPath.row]
         UIConstants.chosenCity = citiesNames[indexPath.row]
-        pushNextViewController()
+        pushLoginViewController()
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

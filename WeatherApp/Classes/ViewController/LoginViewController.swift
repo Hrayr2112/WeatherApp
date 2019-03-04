@@ -20,9 +20,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
-
+    @IBOutlet weak var containerView: UIView!
+    
     // MARK: - Constraints
-    @IBOutlet weak var emailTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerViewVerticalConstraint: NSLayoutConstraint!
     private var defaultTopConstraint: CGFloat!
 
     // MARK: - Lifecycle
@@ -30,7 +31,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         configureNotifications()
-        defaultTopConstraint = emailTopConstraint.constant
+        defaultTopConstraint = containerViewVerticalConstraint.constant
     }
 
     deinit {
@@ -189,7 +190,7 @@ extension LoginViewController {
 
     @objc func resignAllRespondersAndResetTopPosition() {
         view.endEditing(true)
-        emailTopConstraint.constant = defaultTopConstraint
+        containerViewVerticalConstraint.constant = defaultTopConstraint
     }
 }
 
@@ -222,11 +223,13 @@ extension LoginViewController {
                 return
         }
         let animationDurarion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0.3
-        let intersect = keyboardFrame.intersects(createAccountButton.frame)
-        if shouldShowKeyboard, intersect {
-            emailTopConstraint.constant -= keyboardFrame.height / 2
+        if shouldShowKeyboard {
+            if let navigationController = navigationController {
+                let calculation = (containerView.frame.maxY + navigationController.navigationBar.frame.maxY) - keyboardFrame.origin.y
+                containerViewVerticalConstraint.constant -= (calculation + UIConstants.verticalConstraintAdditionalValue)
+            }
         } else {
-            emailTopConstraint.constant = defaultTopConstraint
+            containerViewVerticalConstraint.constant = defaultTopConstraint
         }
         UIView.animate(withDuration: animationDurarion) {
             self.view.layoutIfNeeded()
@@ -240,7 +243,7 @@ extension LoginViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        emailTopConstraint.constant = defaultTopConstraint
+        containerViewVerticalConstraint.constant = defaultTopConstraint
         return true
     }
     
