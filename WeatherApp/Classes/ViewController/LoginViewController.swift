@@ -239,6 +239,7 @@ extension LoginViewController {
 extension LoginViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         emailTopConstraint.constant = defaultTopConstraint
         return true
     }
