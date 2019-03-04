@@ -89,10 +89,14 @@ extension LoginViewController {
         if let emailText = emailDescriptionLabel.text, let passwordText = passwordDescriptionLabel.text {
             emailDescriptionLabel.attributedText = FontManager.getTextWith(letterSpacing: UIConstants.descriptionLabelLetterSpacing,
                                                                                           lineHeight: UIConstants.descriptionLabelLineSpacing,
-                                                                                          text: emailText, fontName: UIConstants.textRegularFont, textSize: UIConstants.descriptionLabelTextSize)
+                                                                                          text: emailText,
+                                                                                          fontName: UIConstants.textRegularFont,
+                                                                                          textSize: UIConstants.descriptionLabelTextSize)
             passwordDescriptionLabel.attributedText = FontManager.getTextWith(letterSpacing: UIConstants.descriptionLabelLetterSpacing,
                                                                                           lineHeight: UIConstants.descriptionLabelLineSpacing,
-                                                                                          text: passwordText, fontName: UIConstants.textRegularFont, textSize: UIConstants.descriptionLabelTextSize)
+                                                                                          text: passwordText,
+                                                                                          fontName: UIConstants.textRegularFont,
+                                                                                          textSize: UIConstants.descriptionLabelTextSize)
         }
     }
 
