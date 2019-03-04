@@ -34,7 +34,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Bbk-Ze-Jpd" kind="show" id="eNJ-Jw-WBu"/>
+                                    <segue destination="nCl-26-q8p" kind="show" id="e9z-oD-ahp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,19 +52,63 @@
             </objects>
             <point key="canvasLocation" x="910" y="122"/>
         </scene>
+        <!--Choose City View Controller-->
+        <scene sceneID="6cL-JM-Wb7">
+            <objects>
+                <viewController id="nCl-26-q8p" customClass="ChooseCityViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eEE-6m-39j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ArF-oD-VyK">
+                                <rect key="frame" x="0.0" y="180" width="375" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Zbj-O9-ayJ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="nCl-26-q8p" id="Fer-tc-YVU"/>
+                                    <outlet property="delegate" destination="nCl-26-q8p" id="9hb-M1-gWN"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите город, чтобы продолжить" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j54-0R-QBi">
+                                <rect key="frame" x="42" y="119" width="291.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ArF-oD-VyK" firstAttribute="leading" secondItem="VK2-Ey-eb9" secondAttribute="leading" id="4jA-9U-qy5"/>
+                            <constraint firstItem="j54-0R-QBi" firstAttribute="centerX" secondItem="VK2-Ey-eb9" secondAttribute="centerX" id="FC6-45-NlM"/>
+                            <constraint firstItem="j54-0R-QBi" firstAttribute="top" secondItem="VK2-Ey-eb9" secondAttribute="top" constant="55" id="cfL-UU-t5q"/>
+                            <constraint firstItem="ArF-oD-VyK" firstAttribute="top" secondItem="j54-0R-QBi" secondAttribute="bottom" constant="40" id="ioO-zI-era"/>
+                            <constraint firstItem="ArF-oD-VyK" firstAttribute="trailing" secondItem="VK2-Ey-eb9" secondAttribute="trailing" id="qfd-Nn-tay"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VK2-Ey-eb9"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ArF-oD-VyK" id="sDD-Ne-80S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SeT-pq-wsz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1572" y="121.88905547226388"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="gOR-5D-bS5">
             <objects>
-                <viewController id="Bbk-Ze-Jpd" customClass="LoginViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Bbk-Ze-Jpd" customClass="LoginViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UzQ-v6-t83">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H0-DF-XXc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fks-hS-wji">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et6-fX-mxV">
                                                 <rect key="frame" x="15" y="146" width="37" height="15.5"/>
@@ -120,14 +164,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r80-6v-0Fr">
-                                                <rect key="frame" x="15" y="225" width="224" height="19"/>
+                                                <rect key="frame" x="15" y="224.5" width="224" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="et0-6K-06m"/>
                                                 </constraints>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="anykee@mail.ru">
+                                                    <fragment content="123Best">
                                                         <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <font key="NSFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -257,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oeU-sV-z87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="121.88905547226388"/>
+            <point key="canvasLocation" x="2231" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="liT-H1-lkm">

@@ -24,7 +24,7 @@ struct AlertManager {
         var text = ""
         switch errorType {
         case .none:
-            text = UIConstants.none
+            text = UIConstants.none + UIConstants.chosenCity + UIConstants.additionalLetter
             break
         case .incorrectEmail:
             text = UIConstants.incorrectEmail
@@ -50,5 +50,5 @@ struct AlertManager {
         alert.addAction(approveButton)
         return alert
     }
-    
+
 }

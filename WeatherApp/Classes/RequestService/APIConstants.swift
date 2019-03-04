@@ -11,6 +11,8 @@ import UIKit
 struct APIConstants {
 
     // Request url and cache information
-    static let baseUrl = "https://fcc-weather-api.glitch.me/api/current?lat=55.751244&lon=37.618423"
+    static let baseUrl = "https://fcc-weather-api.glitch.me/api/current?"
     static let cacheControlValue = "no-cache"
+    // Default is Yerevan
+    static var cityCoordinates = "lat=40.177200&lon=44.503490"
 }

@@ -22,6 +22,9 @@
 		A61D40C4222C06BF00FA3ACC /* SFUIText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A61D40C3222C06BE00FA3ACC /* SFUIText-Regular.otf */; };
 		A61D40C6222C06E700FA3ACC /* SFUIText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A61D40C5222C06E700FA3ACC /* SFUIText-Medium.otf */; };
 		A61D40C8222C540A00FA3ACC /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D40C7222C540A00FA3ACC /* UIConstants.swift */; };
+		A662775D222C96D900B8D080 /* ChooseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A662775C222C96D900B8D080 /* ChooseCityViewController.swift */; };
+		A6627761222C978B00B8D080 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A662775F222C978B00B8D080 /* CityTableViewCell.swift */; };
+		A6627762222C978B00B8D080 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6627760222C978B00B8D080 /* CityTableViewCell.xib */; };
 		A67CEA14222AD3D400242387 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67CEA13222AD3D400242387 /* AlertManager.swift */; };
 		A6DBAD3B222AA1F200AC9E0D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DBAD3A222AA1F200AC9E0D /* FontManager.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,9 @@
 		A61D40C3222C06BE00FA3ACC /* SFUIText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Regular.otf"; sourceTree = "<group>"; };
 		A61D40C5222C06E700FA3ACC /* SFUIText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.otf"; sourceTree = "<group>"; };
 		A61D40C7222C540A00FA3ACC /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		A662775C222C96D900B8D080 /* ChooseCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityViewController.swift; sourceTree = "<group>"; };
+		A662775F222C978B00B8D080 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		A6627760222C978B00B8D080 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		A67CEA13222AD3D400242387 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A6DBAD3A222AA1F200AC9E0D /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +98,7 @@
 		84284794222921DD00B97EFD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A662775E222C977100B8D080 /* Cell */,
 				848F0FAA22269E98007AEBE1 /* AppDelegate.swift */,
 				841E38A122295FC8009BC4D6 /* RequestService */,
 				8428479A222922F400B97EFD /* ViewController */,
@@ -125,6 +132,7 @@
 			children = (
 				841E389F22295F9C009BC4D6 /* SignUpViewController.swift */,
 				841E38A222295FE8009BC4D6 /* LoginViewController.swift */,
+				A662775C222C96D900B8D080 /* ChooseCityViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -175,6 +183,15 @@
 				A61D40C3222C06BE00FA3ACC /* SFUIText-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A662775E222C977100B8D080 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A662775F222C978B00B8D080 /* CityTableViewCell.swift */,
+				A6627760222C978B00B8D080 /* CityTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +258,7 @@
 				848F0FB222269E9A007AEBE1 /* Assets.xcassets in Resources */,
 				A61D40C4222C06BF00FA3ACC /* SFUIText-Regular.otf in Resources */,
 				848F0FB022269E98007AEBE1 /* Main.storyboard in Resources */,
+				A6627762222C978B00B8D080 /* CityTableViewCell.xib in Resources */,
 				A61D40C6222C06E700FA3ACC /* SFUIText-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +321,9 @@
 				84284797222921FF00B97EFD /* String+Localized.swift in Sources */,
 				841E38A022295F9C009BC4D6 /* SignUpViewController.swift in Sources */,
 				A6DBAD3B222AA1F200AC9E0D /* FontManager.swift in Sources */,
+				A662775D222C96D900B8D080 /* ChooseCityViewController.swift in Sources */,
 				848F0FBF2226A0BA007AEBE1 /* APIConstants.swift in Sources */,
+				A6627761222C978B00B8D080 /* CityTableViewCell.swift in Sources */,
 				848F0FC92226B8FA007AEBE1 /* APIService.swift in Sources */,
 				A61D40C8222C540A00FA3ACC /* UIConstants.swift in Sources */,
 				848F0FAB22269E98007AEBE1 /* AppDelegate.swift in Sources */,

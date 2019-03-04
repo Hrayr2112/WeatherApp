@@ -10,7 +10,8 @@ import UIKit
 import ObjectMapper
 
 class APIWeatherResponse: Mappable {
-    var temperature: Float?
+
+    var temperature: Int?
     
     required init?(map: Map){
         guard map.JSON["main"] != nil else { return nil }
@@ -19,4 +20,5 @@ class APIWeatherResponse: Mappable {
     func mapping(map: Map) {
         temperature <- map["main.temp"]
     }
+    
 }

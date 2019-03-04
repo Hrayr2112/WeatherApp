@@ -130,10 +130,21 @@ extension LoginViewController {
             createAccountButton.setAttributedTitle(attributedString, for: .normal)
         }
     }
+
+    func getCorrectDescriptionOfWeather(temperature: NSNumber) -> String {
+        var temperatureString = temperature.stringValue
+        if temperature.intValue > 0 {
+            temperatureString = "+" + temperatureString
+        }
+        temperatureString = temperatureString + UIConstants.additionalText
+        return temperatureString
+    }
+
 }
 
 // MARK: - Actions
 extension LoginViewController {
+
     @IBAction func loginButtonTapped(_ sender: Any) {
         let isValidEmail = ValidationManager.isValidEmail(address: emailTextField.text)
         let params = ValidationManager.isValidPassword(pass: passwordTextField.text)
@@ -146,8 +157,9 @@ extension LoginViewController {
                 MBProgressHUD.showAdded(to: view, animated: true)
                 apiService.getWeatherData { (response) in
                     MBProgressHUD.hide(for: self.view, animated: true)
-                    if let weatherResponse = response, let temperature = weatherResponse.temperature as? NSNumber {
-                        self.showAlertWithErrorType(.none, temperature.stringValue)
+                    if let weatherResponse = response, let temperature = weatherResponse.temperature as NSNumber? {
+                        let temperatureString = self.getCorrectDescriptionOfWeather(temperature: temperature)
+                        self.showAlertWithErrorType(.none, temperatureString)
                     } else {
                         self.showAlertWithErrorType(.connectionFailed, "")
                     }
@@ -175,6 +187,7 @@ extension LoginViewController {
 
 // MARK: - Notifications handler
 extension LoginViewController {
+
     func configureNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(_ :)),
@@ -211,12 +224,15 @@ extension LoginViewController {
             self.view.layoutIfNeeded()
         }
     }
+
 }
 
 // MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTopConstraint.constant = defaultTopConstraint
         return true
     }
+    
 }

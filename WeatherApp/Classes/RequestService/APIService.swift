@@ -11,8 +11,10 @@ import Alamofire
 import AlamofireObjectMapper
 
 class APIService: NSObject {
+
     func getWeatherData(completionHandler: @escaping (_ result: APIWeatherResponse?) -> ()) {
-        Alamofire.request(APIConstants.baseUrl).validate().responseObject { (response: DataResponse<APIWeatherResponse>) in
+        let url = APIConstants.baseUrl + APIConstants.cityCoordinates
+        Alamofire.request(url).validate().responseObject { (response: DataResponse<APIWeatherResponse>) in
             guard let weatherDictionary = response.result.value else { return }
             switch response.result {
             case .success:
@@ -22,4 +24,5 @@ class APIService: NSObject {
             }
         }
     }
+    
 }

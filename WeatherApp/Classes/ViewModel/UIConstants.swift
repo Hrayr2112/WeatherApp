@@ -2,7 +2,7 @@
 //  UIConstants.swift
 //  WeatherApp
 //
-//  Created by Macbook Home on 03/03/2019.
+//  Created by Hrayr Yeghiazaryan on 03/03/2019.
 //  Copyright © 2019 Hrayr Yeghiazaryan. All rights reserved.
 //
 
@@ -44,13 +44,33 @@ struct UIConstants {
 
     // Password validation
     static let approveTitle = "Ok"
-    static let none = "Погода в Москве"
+    static let none = "Погода в "
     static let connectionFailed = "Нет соединения с интернетом"
     static let decimalDigits = "Пароль должен содержать хотя бы одну цифру"
     static let incorrectCount = "Пароль должен содержать как минимум 6 символов"
     static let lowercase = "Пароль должен содержать хотя бы одну строчную букву"
     static let uppercase = "Пароль должен содержать хотя бы одну заглавную букву"
 
+    // Alert Inforamtion
+    static let additionalText = " градусов"
+    static let additionalLetter = "е"
+
     // Email validation
     static let incorrectEmail = "Введите корректный адрес почты"
+
+    // Cities names
+    static let berlin = "Берлин"
+    static let newYork = "Нью-Йорк"
+    static let saintPeterburg = "Санкт-Петербург"
+    static let yerevan = "Ереван"
+    static let paris = "Париж"
+    static var chosenCity = "Ереван"
+
+    // Cities coordinates
+    static let berlinCoordinates = "lat=52.520008&lon=13.404954"
+    static let newYorkCoordinates = "lat=40.730610&lon=-73.935242"
+    static let saintPeterburgCoordinates = "lat=59.940266&lon=30.313810"
+    static let yerevanCoordinates = "lat=40.177200&lon=44.503490"
+    static let parisCoordinates = "lat=48.864716&lon=2.349014"
+    
 }
