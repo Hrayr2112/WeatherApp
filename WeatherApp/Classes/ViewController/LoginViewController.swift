@@ -157,16 +157,20 @@ extension LoginViewController {
         resignAllRespondersAndResetTopPosition()
         if isValidEmail {
             if isValidPassword {
-                let apiService = APIService()
-                MBProgressHUD.showAdded(to: view, animated: true)
-                apiService.getWeatherData { (response) in
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    if let weatherResponse = response, let temperature = weatherResponse.temperature as NSNumber? {
-                        let temperatureString = self.getCorrectDescriptionOfWeather(temperature: temperature)
-                        self.showAlertWithErrorType(.none, temperatureString)
-                    } else {
-                        self.showAlertWithErrorType(.connectionFailed, "")
+                if NetworkManager.shared.isNetworkReachable() {
+                    let apiService = APIService()
+                    MBProgressHUD.showAdded(to: view, animated: true)
+                    apiService.getWeatherData { (response) in
+                        MBProgressHUD.hide(for: self.view, animated: true)
+                        if let weatherResponse = response, let temperature = weatherResponse.temperature as NSNumber? {
+                            let temperatureString = self.getCorrectDescriptionOfWeather(temperature: temperature)
+                            self.showAlertWithErrorType(.none, temperatureString)
+                        } else {
+                            self.showAlertWithErrorType(.connectionFailed, "")
+                        }
                     }
+                } else {
+                    self.showAlertWithErrorType(.connectionFailed, "")
                 }
             } else {
                 showAlertWithErrorType(errorType, "")
