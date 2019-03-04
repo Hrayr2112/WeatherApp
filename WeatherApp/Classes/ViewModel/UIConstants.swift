@@ -72,5 +72,7 @@ struct UIConstants {
     static let saintPeterburgCoordinates = "lat=59.940266&lon=30.313810"
     static let yerevanCoordinates = "lat=40.177200&lon=44.503490"
     static let parisCoordinates = "lat=48.864716&lon=2.349014"
-    
+
+    // Table View
+    static let rowHeight: CGFloat = 50
 }
